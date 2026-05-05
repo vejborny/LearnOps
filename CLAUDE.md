@@ -49,3 +49,25 @@ The sidebar becomes `position: static` below 900px. The `.sidebar-box--cta` vari
 ## Content language
 
 All visible text is in Czech. Keep new content in Czech unless asked otherwise.
+
+## Git workflow
+
+Always commit and push to the **master** branch.
+
+Use the `/push-github` skill (`.claude/commands/push-github.md`) to stage, commit, and push changes.
+
+### Commit message convention
+
+Format: `<type>: <short description in Czech>`
+
+| Type | When to use |
+|------|-------------|
+| `feat` | New feature or content (new page, section, component) |
+| `fix` | Bug fix (broken link, layout issue, typo) |
+| `style` | Visual-only change (colors, spacing, fonts) |
+| `refactor` | Code restructure with no behavior change |
+| `content` | Text, prices, or course date updates |
+| `docs` | Documentation changes (CLAUDE.md, README) |
+| `chore` | Config or non-web files |
+
+Rules: lowercase description, max 72 characters on the first line, write in Czech.
