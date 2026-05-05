@@ -662,14 +662,6 @@ h1, h2, h3, h4 {
   color: var(--color-primary-dk);
 }
 
-.course-card__body h3 a {
-  color: inherit;
-}
-
-.course-card__body h3 a:hover {
-  text-decoration: underline;
-}
-
 .course-card__meta {
   display: flex;
   flex-wrap: wrap;
