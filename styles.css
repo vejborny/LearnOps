@@ -215,7 +215,7 @@ h1, h2, h3, h4 {
 
 .hero p {
   font-size: 1.1rem;
-  opacity: 0.88;
+  color: rgba(255,255,255,.92);
   margin-bottom: 2rem;
   max-width: 560px;
 }
@@ -554,7 +554,7 @@ h1, h2, h3, h4 {
 }
 
 .page-header p {
-  opacity: 0.85;
+  color: rgba(255,255,255,.92);
   max-width: 600px;
   font-size: 1.05rem;
 }
@@ -570,7 +570,7 @@ h1, h2, h3, h4 {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(255,255,255,.18);
+  background: rgba(0,0,0,.28);
   color: var(--color-white);
   padding: 0.3rem 0.85rem;
   border-radius: 999px;
@@ -762,31 +762,31 @@ h1, h2, h3, h4 {
 .sidebar-box ul li:last-child { border-bottom: none; }
 
 .sidebar-box--cta {
-  background: var(--color-primary);
-  color: var(--color-white);
-  border-color: var(--color-primary);
+  background: var(--color-primary-lt);
+  color: var(--color-primary-dk);
+  border: 2px solid var(--color-primary);
   text-align: center;
 }
 
 .sidebar-box--cta h3 {
-  color: var(--color-white);
-  border-bottom-color: rgba(255,255,255,.25);
+  color: var(--color-primary-dk);
+  border-bottom-color: var(--color-border);
 }
 
 .sidebar-box--cta p {
   font-size: 0.9rem;
-  opacity: 0.88;
+  color: var(--color-text-muted);
   margin-bottom: 1rem;
 }
 
 .sidebar-box--cta .btn {
   width: 100%;
   text-align: center;
-  background: var(--color-accent);
-  color: #1a1a2e;
+  background: var(--color-primary);
+  color: var(--color-white);
 }
 
-.sidebar-box--cta .btn:hover { background: #d99200; }
+.sidebar-box--cta .btn:hover { background: var(--color-primary-dk); color: var(--color-white); }
 
 /* ============================================================
    COURSE DETAIL EXPAND (accordion-like static)
@@ -864,9 +864,33 @@ h1, h2, h3, h4 {
 .dates-table tr:last-child td { border-bottom: none; }
 .dates-table tr:hover td { background: var(--color-bg-alt); }
 
-.dates-table td .btn {
+/* Use .btn--sm on table buttons — see UTILITY CLASSES */
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+/* Visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.btn--sm {
   padding: 0.35rem 1rem;
   font-size: 0.82rem;
+}
+
+/* Footer logo mark ghost variant */
+.site-footer .logo__mark {
+  background: rgba(255,255,255,.15);
 }
 
 /* ============================================================
@@ -889,4 +913,6 @@ h1, h2, h3, h4 {
   .course-card   { grid-template-columns: 1fr; }
   .course-card__aside { align-items: flex-start; }
   .stats-bar__grid { justify-content: flex-start; }
+  /* stacked header is ~118px tall at mobile */
+  .filter-bar { top: 118px; }
 }
