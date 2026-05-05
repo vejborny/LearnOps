@@ -898,7 +898,15 @@ h1, h2, h3, h4 {
   color: var(--color-text-muted);
   border-bottom: 3px solid transparent;
   margin-bottom: -2px;
-  cursor: default;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.detail-tab:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .detail-tab.active {
@@ -983,6 +991,43 @@ h1, h2, h3, h4 {
 /* Footer logo mark ghost variant */
 .site-footer .logo__mark {
   background: rgba(255,255,255,.15);
+}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+  box-shadow: var(--shadow-md);
+  z-index: 200;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--color-primary-dk);
+  color: var(--color-white);
+  text-decoration: none;
 }
 
 /* ============================================================

@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Kurzy time managementu a soft skills – efektivní plánování, prioritizace, práce s časem. LearnOps vzdělávací agentura." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vejborny.github.io/LearnOps/course-2.html" />
+  <meta property="og:title" content="Time management – Soft skills | LearnOps" />
+  <meta property="og:description" content="Kurzy time managementu a soft skills – efektivní plánování, prioritizace, práce s časem." />
+  <meta property="og:locale" content="cs_CZ" />
+  <meta name="twitter:card" content="summary" />
   <title>Time management – Soft skills | LearnOps</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -237,9 +243,9 @@
           <section style="margin-top: 2.5rem;">
             <h2 style="font-size:1.3rem; margin-bottom:1rem;">Nejbližší termíny</h2>
             <div class="detail-tabs">
-              <div class="detail-tab active">Praha</div>
-              <div class="detail-tab">Brno</div>
-              <div class="detail-tab">Online</div>
+              <button class="detail-tab active" data-tab="Praha">Praha</button>
+              <button class="detail-tab" data-tab="Brno">Brno</button>
+              <button class="detail-tab" data-tab="Online">Online</button>
             </div>
             <table class="dates-table">
               <caption class="sr-only">Nejbližší termíny kurzů time managementu a soft skills</caption>
@@ -253,37 +259,37 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr data-location="Praha">
                   <td>Time management – efektivní řízení času</td>
-                  <td>5. 6. 2025</td>
+                  <td>5. 6. 2026</td>
                   <td>Praha, Václavské nám.</td>
                   <td><span class="tag tag--green">10 míst</span></td>
                   <td><a href="index.html#kontakt" class="btn btn--blue btn--sm">Přihlásit</a></td>
                 </tr>
-                <tr>
+                <tr data-location="Praha">
                   <td>Osobní produktivita a organizace práce</td>
-                  <td>12. 6. 2025</td>
+                  <td>12. 6. 2026</td>
                   <td>Praha, Václavské nám.</td>
                   <td><span class="tag tag--orange">4 místa</span></td>
                   <td><a href="index.html#kontakt" class="btn btn--blue btn--sm">Přihlásit</a></td>
                 </tr>
-                <tr>
+                <tr data-location="Online">
                   <td>Work-life balance (online)</td>
-                  <td>19. 6. 2025</td>
+                  <td>19. 6. 2026</td>
                   <td>Online (Zoom)</td>
                   <td><span class="tag tag--green">15 míst</span></td>
                   <td><a href="index.html#kontakt" class="btn btn--blue btn--sm">Přihlásit</a></td>
                 </tr>
-                <tr>
+                <tr data-location="Praha">
                   <td>Deep work – soustředění v době rozptýlení</td>
-                  <td>3. 7. 2025</td>
+                  <td>3. 7. 2026</td>
                   <td>Praha, Václavské nám.</td>
                   <td><span class="tag tag--green">9 míst</span></td>
                   <td><a href="index.html#kontakt" class="btn btn--blue btn--sm">Přihlásit</a></td>
                 </tr>
-                <tr>
+                <tr data-location="Brno">
                   <td>Time management – efektivní řízení času</td>
-                  <td>10. 7. 2025</td>
+                  <td>10. 7. 2026</td>
                   <td>Brno</td>
                   <td><span class="tag tag--green">12 míst</span></td>
                   <td><a href="index.html#kontakt" class="btn btn--blue btn--sm">Přihlásit</a></td>
@@ -379,5 +385,23 @@
     </div>
   </footer>
 
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="Zpět nahoru">↑</a>
+  <script>
+    (function(){
+      var btn=document.getElementById('back-to-top');
+      window.addEventListener('scroll',function(){ btn.classList.toggle('visible',scrollY>400); },{passive:true});
+      document.querySelectorAll('.detail-tabs').forEach(function(tabs){
+        tabs.addEventListener('click',function(e){
+          var b=e.target.closest('.detail-tab'); if(!b) return;
+          tabs.querySelectorAll('.detail-tab').forEach(function(t){t.classList.remove('active');});
+          b.classList.add('active');
+          var loc=b.dataset.tab;
+          tabs.nextElementSibling.querySelectorAll('tbody tr').forEach(function(r){
+            r.style.display=r.dataset.location===loc?'':'none';
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

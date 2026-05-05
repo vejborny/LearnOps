@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Obchodní podmínky LearnOps s.r.o. – podmínky objednávky kurzu, platební a storno podmínky, ochrana osobních údajů." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vejborny.github.io/LearnOps/obchodni-podminky.html" />
+  <meta property="og:title" content="Obchodní podmínky | LearnOps" />
+  <meta property="og:description" content="Obchodní podmínky LearnOps s.r.o. – platební a storno podmínky, ochrana osobních údajů." />
+  <meta property="og:locale" content="cs_CZ" />
+  <meta name="twitter:card" content="summary" />
   <title>Obchodní podmínky | LearnOps</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -169,5 +175,12 @@
     </div>
   </footer>
 
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="Zpět nahoru">↑</a>
+  <script>
+    (function(){
+      var btn=document.getElementById('back-to-top');
+      window.addEventListener('scroll',function(){ btn.classList.toggle('visible',scrollY>400); },{passive:true});
+    })();
+  </script>
 </body>
 </html>

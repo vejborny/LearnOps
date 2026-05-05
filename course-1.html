@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Kurzy AI pro uživatele – naučte se využívat umělou inteligenci v praxi. ChatGPT, Copilot, automatizace. LearnOps vzdělávací agentura." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vejborny.github.io/LearnOps/course-1.html" />
+  <meta property="og:title" content="AI pro uživatele – IT kurzy | LearnOps" />
+  <meta property="og:description" content="Praktické kurzy AI pro každodenní práci. ChatGPT, Copilot, automatizace. LearnOps vzdělávací agentura." />
+  <meta property="og:locale" content="cs_CZ" />
+  <meta name="twitter:card" content="summary" />
   <title>AI pro uživatele – IT kurzy | LearnOps</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -239,9 +245,9 @@
           <section style="margin-top: 2.5rem;">
             <h2 style="font-size:1.3rem; margin-bottom:1rem;">Nejbližší termíny</h2>
             <div class="detail-tabs">
-              <div class="detail-tab active">Praha</div>
-              <div class="detail-tab">Brno</div>
-              <div class="detail-tab">Online</div>
+              <button class="detail-tab active" data-tab="Praha">Praha</button>
+              <button class="detail-tab" data-tab="Brno">Brno</button>
+              <button class="detail-tab" data-tab="Online">Online</button>
             </div>
             <table class="dates-table">
               <caption class="sr-only">Nejbližší termíny kurzů AI pro uživatele</caption>
@@ -255,37 +261,37 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr data-location="Praha">
                   <td>AI pro uživatele – úvod</td>
-                  <td>10. 6. 2025</td>
+                  <td>10. 6. 2026</td>
                   <td>Praha, Václavské nám.</td>
                   <td><span class="tag tag--green">8 míst</span></td>
                   <td><a href="index.html#kontakt" class="btn btn--blue btn--sm">Přihlásit</a></td>
                 </tr>
-                <tr>
+                <tr data-location="Praha">
                   <td>Microsoft 365 Copilot</td>
-                  <td>17. 6. 2025</td>
+                  <td>17. 6. 2026</td>
                   <td>Praha, Václavské nám.</td>
                   <td><span class="tag tag--orange">3 místa</span></td>
                   <td><a href="index.html#kontakt" class="btn btn--blue btn--sm">Přihlásit</a></td>
                 </tr>
-                <tr>
+                <tr data-location="Online">
                   <td>AI pro uživatele – úvod</td>
-                  <td>24. 6. 2025</td>
+                  <td>24. 6. 2026</td>
                   <td>Online (Zoom)</td>
                   <td><span class="tag tag--green">12 míst</span></td>
                   <td><a href="index.html#kontakt" class="btn btn--blue btn--sm">Přihlásit</a></td>
                 </tr>
-                <tr>
+                <tr data-location="Praha">
                   <td>Pokročilý prompt engineering</td>
-                  <td>1.–2. 7. 2025</td>
+                  <td>1.–2. 7. 2026</td>
                   <td>Praha, Václavské nám.</td>
                   <td><span class="tag tag--green">6 míst</span></td>
                   <td><a href="index.html#kontakt" class="btn btn--blue btn--sm">Přihlásit</a></td>
                 </tr>
-                <tr>
+                <tr data-location="Online">
                   <td>AI nástroje pro obsah</td>
-                  <td>8. 7. 2025</td>
+                  <td>8. 7. 2026</td>
                   <td>Online (Teams)</td>
                   <td><span class="tag tag--green">15 míst</span></td>
                   <td><a href="index.html#kontakt" class="btn btn--blue btn--sm">Přihlásit</a></td>
@@ -381,5 +387,23 @@
     </div>
   </footer>
 
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="Zpět nahoru">↑</a>
+  <script>
+    (function(){
+      var btn=document.getElementById('back-to-top');
+      window.addEventListener('scroll',function(){ btn.classList.toggle('visible',scrollY>400); },{passive:true});
+      document.querySelectorAll('.detail-tabs').forEach(function(tabs){
+        tabs.addEventListener('click',function(e){
+          var btn=e.target.closest('.detail-tab'); if(!btn) return;
+          tabs.querySelectorAll('.detail-tab').forEach(function(t){t.classList.remove('active');});
+          btn.classList.add('active');
+          var loc=btn.dataset.tab;
+          tabs.nextElementSibling.querySelectorAll('tbody tr').forEach(function(r){
+            r.style.display=r.dataset.location===loc?'':'none';
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
